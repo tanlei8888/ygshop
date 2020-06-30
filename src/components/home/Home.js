@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import axios from '../../utils/axios'
+// import axios from '../../utils/axios'
 import Header from './Hearder'
-import Swiper from "swiper"
+import Swiper from "./swiper"
 import Produc from './Produc'
-import 'swiper/css/swiper.css'
 import './Home.scss'
 //引入react-redux中连接组件和store仓库的对象 connect 连接的意思
 import { connect } from 'react-redux'
@@ -15,32 +14,16 @@ class Home extends Component {
     }
     componentDidMount(){
         this.props.getBannerList()
-        axios.get('getIndexLoopimg').then(res => {
-            this.setState({
-                newlist:this.props.bannerList
-            },()=>{
-                new Swiper('.swiper-container', {
-                    loop: true,
-                    direction : 'horizontal',
-                    autoplay: {
-                        disableOnInteraction: false,
-                    },
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    }
-                })
-            })
-        }).catch(err => console.log(err));
     }
     render() {
+
         return (
             <div className='ygshop-index'>
                 {/* 头部开始 */}
                 <Header></Header>
                 {/* 头部结束 */}
                 {/* 轮播图开始 */}
-                <div className="index-slider">
+                {/* <div className="index-slider">
                     <div className="swiper-container">
                         <div className="swiper-wrapper">
                             {
@@ -50,7 +33,8 @@ class Home extends Component {
                         </div>
                         <div className="swiper-pagination"></div>
                     </div>
-                </div>
+                </div> */}
+                <Swiper bannerList={this.props.bannerList}></Swiper>
                 {/* 轮播图结束 */}
                 {/* 导航栏开始 */}
                 <div className='jinxiNavs'>

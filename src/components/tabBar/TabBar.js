@@ -5,25 +5,6 @@ class TabBar extends Component {
     state = {
         currentTab:'home'
     }
-    // componentDidMount(){
-    //     console.log(this.state.currentTab)
-    //     console.log(this.props)
-    //     console.log(this.props.history.location.pathname)
-    //     let currentTab = this.props.history.location.pathname.split('/')[1]
-    //     // if(currentTab === '' || currentTab === 'community' || currentTab === 'cart' || currentTab === 'my'){
-    //         if(currentTab === ''){
-    //             currentTab = 'home'
-    //         }
-    //         this.setState({
-    //             currentTab
-    //         })
-    //     // }else{
-    //     //     // this.setState({
-    //     //     //     currentTab:'home'
-    //     //     // })
-    //     // }
-        
-    // }
     handleTabchange = (params) => {
         // console.log(this.props);
         // console.log(params);

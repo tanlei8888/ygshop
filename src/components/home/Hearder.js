@@ -10,7 +10,7 @@ export default class Hearder extends Component {
         }
     }
     changeHeader = () => {
-        // console.log(this.props)
+        console.log(this.props)
         // this.props.jumpIndex(this.state.changeHeader)
     }
     render() {

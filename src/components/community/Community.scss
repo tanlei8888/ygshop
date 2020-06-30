@@ -1,0 +1,55 @@
+.ygshop-community{
+    background-color: #F5F5F5;
+    .jinxiHeader {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 101;
+        background-color: #ee394a;
+        color: #fff;
+        display: flex;
+        height: 1.33333333rem;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0.2rem;
+        font-size: 0.69333333rem;
+      }
+      .HeaderContainer{
+        height: 1.33333333rem;
+      }
+      .communityList {
+          height: 100vh;
+        background-color: #F5F5F5;
+          .communityList-item {
+            height: 520px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            color: grey;
+          .userInfo {
+            img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                vertical-align: middle;
+            }
+      
+            span {
+      
+            }
+          }
+      
+          .text {
+            padding: 10px 0;
+          }
+      
+          .productImgs {
+            img {
+                width: 32%;
+            }
+
+          }
+
+        }
+      }
+}

@@ -1,16 +1,8 @@
 import React, { Component } from 'react'
-
 import { withRouter } from 'react-router-dom'
 class Produc extends Component {
     jumpDetail = (pid) => {   
-        // this.props.history.push(`/ProducDetail/${pid}/`)
-        // this.props.headerChange({
-        //     title:'产品详情',
-        //     classname:[
-        //         'iconfont icon-left',
-        //         ''
-        //     ]
-        // })
+        this.props.history.push(`/productDtail/${pid}/`)
     }
     render() {
         // console.log(this.props.products);

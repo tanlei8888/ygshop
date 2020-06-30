@@ -1,6 +1,9 @@
 /* eslint global-require:0, no-nested-ternary:0 */
 import { Menu, ActivityIndicator, NavBar } from 'antd-mobile';
-
+// import 'antd-mobile/lib/date-menu';  // 加载 JS
+// import 'antd-mobile/lib/date-menu/style/css';
+import './menu.css'
+import React, { Component } from 'react'
 const data = [
   {
     value: '1',
@@ -71,7 +74,7 @@ const data = [
   },
 ];
 
-class MultiMenuExample extends React.Component {
+export default class MultiMenuExample extends Component {
   constructor(...args) {
     super(...args);
     this.state = {
@@ -148,4 +151,3 @@ class MultiMenuExample extends React.Component {
   }
 }
 
-ReactDOM.render(<MultiMenuExample />, mountNode);

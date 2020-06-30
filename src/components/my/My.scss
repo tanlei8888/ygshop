@@ -1,0 +1,128 @@
+.ygshop-my {
+    background-color: #F5F5F5;
+    height: 100vh;
+    .my-bg {
+        position: relative;
+        height: 440px;
+      img {
+        height: 100%;
+      }
+  
+      .userImg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+      }
+    }
+  
+    .my-order {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+        font-size: 28px;
+        padding: 0 20px;
+        color: gray;
+        background-color: #fff;
+      .order-left {
+        img {
+            width: 60px;
+            vertical-align: middle;
+        }
+  
+        span {
+            padding: 0 20px;
+        }
+      }
+  
+      .order-right {
+          position: relative;
+        span {
+            padding-right: 30px;
+        }
+      }
+      .order-right::after{
+          position: absolute;
+          content: '';
+          display: block;
+          width: 18px;
+          height: 18px;
+          border-right: 1px solid gray;/*no*/
+          border-top: 1px solid gray;/*no*/
+          right: 0;
+          top: 0;
+          transform: rotate(45deg) translate(0,50%);
+      }
+    }
+  
+    .my-navs {
+        height: 150px;
+        padding: 20px 0;
+        border-top: 1px solid #ddd;/*no*/
+        border-bottom: 1px solid #ddd;/*no*/
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: gray;
+        background-color: #fff;
+      .navs-item {
+          text-align: center;
+        i.icon.icon-pay {
+  
+        }
+  
+        p {
+  
+        }
+      }
+    }
+    .my-system {
+        color: gray;
+        background-color: #fff;
+        margin-top: 20px;
+        .system-item {
+            height: 90px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            border-bottom: 1px solid #ddd;/*no*/
+          .system-item-left {
+           div{
+               padding: 20px;
+               display: inline-block;
+                img {
+                    width: 60px;
+                    vertical-align: middle;
+                }
+           }
+      
+            span {
+                // padding-left: 30px;
+            }
+          }
+      
+          .system-item-right {
+            padding-right: 40px;
+          }
+        }
+        .system-item-right::after{
+            position: absolute;
+            content: '';
+            display: block;
+            width: 18px;
+            height: 18px;
+            border-right: 1px solid gray;/*no*/
+            border-top: 1px solid gray;/*no*/
+            right: 10px;
+            top: 55%;
+            transform: rotate(45deg) translate(-50%,-50%);
+        }
+      }
+  }
