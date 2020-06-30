@@ -1,0 +1,37 @@
+
+
+.ygshop-tabbar {
+    font-size: 32px;
+    background-color: #fff;
+    .tabbar-content {
+        
+    }
+  
+    .tabbar-footer {
+        background-color: #fff;
+        position: fixed;
+        color: #737373;
+        border-top: 1px solid #e6e6e6; /*no*/
+        bottom: 0;
+        width: 100vw;
+        height: 132px;
+        display: flex;
+        justify-content: space-between;
+        padding: 3px 0;
+      .tabbar-footer-item {
+          flex: 1;
+          // text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+        .icon.icon-home {
+            
+        }
+  
+        p {
+            
+        }
+      }
+    }
+  }

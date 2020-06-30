@@ -1,0 +1,104 @@
+.ygshop-index{
+    background-color: #F5F5F5;
+    .index-slider{
+        width:100vw;
+        height:320px;
+        img{
+            width:100vw;
+            height:320px;
+        }
+        .swiper-pagination{
+            .swiper-pagination-bullet{
+                width: 20px;
+                height: 6px;
+                border-radius: 0;
+                background-color: black;
+            }
+            .swiper-pagination-bullet-active{
+                background-color: #ee394a;
+            }
+        }
+    }
+    .jinxiNavs {
+        height: 206px;
+        margin: 20px 0;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+       .jinxiNavs .Navsitem {
+        font-size: 30px;
+      }
+       .jinxiNavs .Navsitem img {
+        width: 112px;
+        height: 112px;
+      }
+       .jinxiNavs .Navsitem p {
+        padding-top: 20px;
+        text-align: center;
+      }
+
+      .jinxiCustomer{
+        height: 342px;
+        background-color: #fff;
+        h3{
+          padding: 25px 35px;
+          font-size: 32px;
+        }
+       //  line-height: 342/75rem;
+        .jinxiCustomerList{
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          .jinxiCustomerItem{
+             img{
+               width: 140px;
+               height: 140px;
+               border-radius: 50%;
+             }
+             p{
+               text-align: center;
+               padding-top: 25px;
+               font-size: 28px;
+             }
+          }
+        }
+      }
+
+      .jinxiProduc {
+        margin-top: 20px;
+        margin-bottom: 133px;
+       h3 {
+         background-color: #fff;
+         font-size: 32px;
+         padding: 30px;
+       }
+     
+       .ProducList {
+         font-size: 28px;
+         display: flex;
+         justify-content: space-around;
+         flex-wrap: wrap;
+         .ProducItem {
+           width: 32%;
+           height: 306px;
+           background-color: white;
+           margin-bottom: 10px;
+           img {
+             width: 100%;
+             height: 202px;
+           }
+     
+           p {
+             white-space: nowrap;
+             overflow: hidden;
+             padding: 5px 10px;
+           }
+           .price{
+             color: #ee394a;
+           }
+         }
+       }
+     }
+}

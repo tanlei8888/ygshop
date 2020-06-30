@@ -4,11 +4,14 @@ import "lib-flexible" ;
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+//引入 react-redux 负责将store和组件连接起来
+import { Provider } from 'react-redux'
+//引入store仓库
+import store from './store'
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+    </Provider>,
   document.getElementById('root')
 );
 
