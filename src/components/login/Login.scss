@@ -1,0 +1,45 @@
+.my-login {
+    .userInput {
+        width: 90vw;
+        margin: 200px auto 0;
+      .userId {
+          border-bottom: 1px solid #ddd;
+          margin: 100px 0;
+        input {
+            width: 90vw;
+            text-indent: 2em;
+            height: 100px;
+            outline: medium;
+            border: none;
+            font-size: 12px;/*px*/
+        }
+      }
+  
+      .userpwd {
+        border-bottom: 1px solid #ddd;
+        margin: 100px 0;
+        input {
+            width: 90vw;
+            height: 100px;
+            outline: medium;
+            text-indent: 2em;
+            border: none;
+            font-size: 12px;/*px*/
+        }
+      }
+  
+      .loginBtn {
+          margin: 100px 0;
+          height: 80px;
+          line-height: 80px;
+        text-align: center;
+        background-color: #ee394a;
+        border-radius: 50px;
+        font-size: 18px;/*px*/
+        color: white;
+        span {
+            // padding: 0 40vw;
+        }
+      }
+    }
+  }

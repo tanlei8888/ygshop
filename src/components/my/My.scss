@@ -4,9 +4,10 @@
     .my-bg {
         position: relative;
         height: 440px;
-      img {
-        height: 100%;
-      }
+       
+        img {
+          height: 100%;
+        }
   
       .userImg {
           position: absolute;
@@ -19,8 +20,28 @@
             border-radius: 50%;
         }
       }
+     
     }
-  
+    .my-login{
+      height: 440px;
+      position: relative;
+      background-color: #fff;
+      margin-bottom: 10px;
+      .login{
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        font-size: 16px;/*px*/
+        color: white;
+        background-color: #ee394a;
+        text-align: center;
+        border-radius: 8px;
+        position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+      }
+    }
     .my-order {
         display: flex;
         justify-content: space-between;

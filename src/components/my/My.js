@@ -1,16 +1,38 @@
 import React, { Component } from 'react'
 import './My.scss'
-export default class My extends Component {
+import { withRouter } from 'react-router-dom'
+class My extends Component {
+    state = {
+        isLogin:false,
+    }
+    login = (params) => {
+        this.props.history.push('/login')
+    }
+    componentDidMount(){
+        let userInfo = JSON.parse(localStorage.getItem("userinfo"))||{};
+        let isLogin = userInfo.oauth_token ? true :false;
+        this.setState({
+            isLogin
+        })
+
+    }
     render() {
         return (
             <div className='ygshop-my'>
-                <div className='my-bg'>
-                    <img src="https://www.17sucai.com/preview/177065/2016-09-12/Sc-5/images/user_bg.png" alt=""/>
-                    <img src="" alt=""/>
-                    <div className='userImg'>
-                        <img src="https://www.17sucai.com/preview/177065/2016-09-12/Sc-5/images/user-img0.jpg" alt=""/>
+                {
+                    this.state.isLogin ?
+                    <div className='my-bg'>
+                        <img src="https://www.17sucai.com/preview/177065/2016-09-12/Sc-5/images/user_bg.png" alt=""/>
+                        <img src="" alt=""/>
+                        <div className='userImg'>
+                            <img src="https://www.17sucai.com/preview/177065/2016-09-12/Sc-5/images/user-img0.jpg" alt=""/>
+                        </div>
+                    </div> :
+                    <div className='my-login'>
+                        <div className='login' onClick={this.login}>登录</div>
                     </div>
-                </div>
+                }
+                
                 <div className='my-order'>
                     <div className='order-left'>
                         <img src="https://www.17sucai.com/preview/177065/2016-09-12/Sc-5/images/indent.png" alt=""/>
@@ -97,3 +119,4 @@ export default class My extends Component {
         )
     }
 }
+export default withRouter(My)
