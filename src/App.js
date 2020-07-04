@@ -9,6 +9,9 @@ import Login from './components/login/Login.js'
 import Register from './components/register/Register.js'
 // import Menu from './components/menu/index'
 import ProductDtail from './components/productDetail/ProductDtail'
+import Pay from './components/pay/Pay'
+import Payment from "./components/pay/Payment"
+import Address from "./components/address/Address"
 import {HashRouter as Router ,Route , Redirect , Switch} from 'react-router-dom'
 
 function App() {
@@ -23,6 +26,9 @@ function App() {
           <Route exact path='/productDtail/:id' component={ ProductDtail }></Route>
           <Route exact path="/login" render={() => <Login></Login>}></Route>
           <Route exact path="/register" render={() => <Register></Register>}></Route>
+          <Route exact path="/pay" render={() => <Pay></Pay>}></Route>
+          <Route exact path="/payment" render={() => <Payment></Payment>}></Route>
+          <Route exact path="/address" render={() => <Address></Address>}></Route>
           <Redirect to='/'></Redirect>
         </Switch>
       </Router>

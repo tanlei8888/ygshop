@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import store from '../../store/index'
+// import store from '../../store/index'
 import './productDetail.scss'
+import axios from '../../utils/axios'
 export default class ProductDetail extends Component {
     state = {
         product:{},
@@ -12,16 +13,38 @@ export default class ProductDetail extends Component {
             ]
         }
     }
+    pid = '';
     changeHeader = (params) => {
         this.props.history.push('/')
     }
     componentDidMount(){
-        let product = store.getState().products.filter(item=>{
-            return item.pid === +this.props.match.params.id
-        })
-        this.setState({
-            product:product[0]
-        })
+        // let product = store.getState().products.filter(item=>{
+        //     return item.pid === +this.props.match.params.id
+        // })
+        this.pid = this.props.match.params.id || "";
+        // 2. 发请求获取详细的产品的数据
+        axios.get("getProductDetail", {
+            params: {
+                pid:this.pid
+            }
+        }).then(res => {
+            console.log(res);
+            // 3. 将数据存到 state 中
+            this.setState({
+                product: res.wdata
+            })
+        }).catch(err => console.log(err));
+    }
+    pay = (params) => {
+        // 跳转到支付页面
+        this.props.history.push("/pay")
+    }
+    addToCart=(params) => {
+        axios.post("updateCarts",{
+            productNumber:1,pid:this.pid,action:"add"
+        }).then(res=>{
+            console.log(res);
+        }).catch(err=>console.log(err));
     }
     render() {
         return (
@@ -42,7 +65,7 @@ export default class ProductDetail extends Component {
                    <img src={this.state.product.product_url} alt=""/>
                    <div className='producInfo'>
                         <p className='productName'>{this.state.product.product_name}</p>
-                        <p className='productPrice'>{'¥' + this.state.product.product_price} </p>
+                        <p className='productPrice'>¥{this.state.product.product_price} </p>
                    </div>
                 </div>
                 <div className='producDetail-footer'>
@@ -52,8 +75,8 @@ export default class ProductDetail extends Component {
                        </div>
                     </div>
                     <div className='footer-right'>
-                       <div className='add'>加入购物车</div>
-                       <div className='pay'>立即购买</div>
+                       <div className='add' onClick={this.addToCart}>加入购物车</div>
+                       <div className='pay' onClick={this.pay}>立即购买</div>
                     </div>
                 </div>
             </div>

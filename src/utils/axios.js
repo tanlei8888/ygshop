@@ -6,6 +6,11 @@ import axios from 'axios'
 axios.defaults.baseURL = 'http://s.linweiqin.com/api/s/'
 //设置请求拦截
 axios.interceptors.request.use(function(config){
+    let userInfo = JSON.parse(localStorage.getItem('userinfo'))||{}
+    let oauth_token = userInfo.oauth_token
+    if(oauth_token&&config.data){ //如果是get请求是没有data参数的
+        config.data.oauth_token = oauth_token;
+    }
     return config
 },function(err){
     return Promise.reject(err)
