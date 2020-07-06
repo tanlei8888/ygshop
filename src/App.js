@@ -26,7 +26,7 @@ function App() {
           <Route exact path='/productDtail/:id' component={ ProductDtail }></Route>
           <Route exact path="/login" render={() => <Login></Login>}></Route>
           <Route exact path="/register" render={() => <Register></Register>}></Route>
-          <Route exact path="/pay" render={() => <Pay></Pay>}></Route>
+          <Route exact path="/pay/:id" render={() => <Pay></Pay>}></Route>
           <Route exact path="/payment" render={() => <Payment></Payment>}></Route>
           <Route exact path="/address" render={() => <Address></Address>}></Route>
           <Redirect to='/'></Redirect>

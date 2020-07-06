@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import "./Pay.scss"
 import shopLogo from "../../images/cart_logo.png"
-import productPic from "../../images/product_pic.png"
+import axios from '../../utils/axios'
 import { withRouter } from "react-router-dom"
 
 // "uaid":32 地址信息
 // "uoid":17 订单编号
 class Pay extends Component {
+    state = {
+        product:{}
+    }
     goBack = (params) => {
         // 返回上一页
         this.props.history.go(-1);
@@ -16,7 +19,20 @@ class Pay extends Component {
         this.props.history.push("/payment");
 
     }
-
+    componentDidMount(){
+        console.log(this.props.match.params.id);
+        axios.get("getProductDetail", {
+            params: {
+                pid:this.props.match.params.id || ""
+            }
+        }).then(res => {
+            console.log(res);
+            // 3. 将数据存到 state 中
+            this.setState({
+                product: res.wdata
+            })
+        }).catch(err => console.log(err));
+    }
     render() {
         return (
             <div className="yg-pay">
@@ -41,7 +57,8 @@ class Pay extends Component {
                        </div>
                     </div>
                     <div className="pay-address-right">
-                        <i className="icon icon-select"></i>
+                        {/* <i className="icon icon-select"></i> */}
+                        修改
                     </div>
                 </div>
                 {/* 收货地址结束 */}
@@ -51,19 +68,19 @@ class Pay extends Component {
                         <div className="list-item-shop">
                             <i className="icon icon-radio"></i>
                             <img src={shopLogo} alt="" />
-                            <span className="list-item-title">海绵宝宝</span>
+                            <span className="list-item-title">商品详情</span>
                         </div>
                         <div className="list-item-content">
                             <div className="item-content-left">
-                                <img src={productPic} alt="" />
+                                <img src={this.state.product.product_url} alt="" />
                                 <div className="item-content-desc">
-                                    <span className="content-desc-title">首款海绵包包</span>
+                                    <span className="content-desc-title">{this.state.product.product_name}</span>
                                     <span className="content-desc-type">
                                         颜色:黑色
                                     </span>
                                     <div className="content-desc-bottom">
                                         <span className="content-desc-price">
-                                            ¥68.00
+                                            ¥{this.state.product.product_price}
                                        </span>
                                         <div className="item-content-right">
 

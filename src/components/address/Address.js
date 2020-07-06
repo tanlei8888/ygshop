@@ -32,6 +32,7 @@ class Address extends Component{
             address_name,address_mobile,address
         }).then(res=>{
             console.log(res);
+            this.props.history.push('pay')
             localStorage.setItem("uaid",res.uaid);
         }).catch(err=>console.log(err))
     }
@@ -49,21 +50,21 @@ class Address extends Component{
             </div>
             <div className="yg-address-content">
                 <div className="address-content-contact">
-                    <label htmlFor="contact">联系人</label>
+                    <label htmlFor="contact">联系人:</label>
                     <input type="text"
                     value={this.state.address_name }
                     onChange={this.saveAddressName }
                     id="contact"/>
                 </div>
                 <div className="address-content-phone">
-                    <label htmlFor="phone">手机号</label>
+                    <label htmlFor="phone">手机号:</label>
                     <input type="text" 
                     value={this.state.address_mobile }
                     onChange={this.saveMobile}
                     id="phone"/>
                 </div>
                 <div className="address-content-contact">
-                    <label htmlFor="address">详细地址</label>
+                    <label htmlFor="address">详细地址:</label>
                     <input type="text" 
                     value={this.state.address}
                     onChange={this.saveAddressDetail}
@@ -71,7 +72,7 @@ class Address extends Component{
                 </div>
             </div>
             <div className="yg-address-save">
-                <button onClick={this.saveAddress}>保存地址</button> 
+                <button onClick={this.saveAddress}>保存地址:</button> 
             </div>
         </div>
     }

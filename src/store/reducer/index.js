@@ -1,11 +1,12 @@
 //导入Type常量
-import { GET_BANNER ,GET_PRODUCS , CHANGE_HEADER} from '../actionType'
+import { GET_BANNER ,GET_PRODUCS , CHANGE_HEADER , GET_CARTPRODUCT} from '../actionType'
 
 
 const defaultState = {
    bannerList:{
-       banner:[]
-   },
+       banner:[],
+    },
+    product:[],
 //    hearder:{
 //     title:'京西商城',
 //     classname:[
@@ -22,7 +23,7 @@ export default (state = defaultState,action)=>{
     //当action被派发时(dispatch),会触发
     if(action.type === GET_BANNER){
         //进行深复制
-        console.log(action);
+        // console.log(action);
         newData.bannerList.banner = action.data
         // console.log(newData.bannerList);
     }
@@ -31,9 +32,13 @@ export default (state = defaultState,action)=>{
         newData.products = action.data
     }
     if(action.type === CHANGE_HEADER){
-        console.log(action.data);
+        // console.log(action.data);
         newData.hearder = action.data
         state.hearder = action.data
+    }
+    if(action.type === GET_CARTPRODUCT){
+        console.log(action.data);
+        newData.product = action.data
     }
     return newData
 }

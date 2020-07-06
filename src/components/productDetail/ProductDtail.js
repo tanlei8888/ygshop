@@ -37,7 +37,7 @@ export default class ProductDetail extends Component {
     }
     pay = (params) => {
         // 跳转到支付页面
-        this.props.history.push("/pay")
+        this.props.history.push("/pay/"+params)
     }
     addToCart=(params) => {
         axios.post("updateCarts",{
@@ -76,7 +76,7 @@ export default class ProductDetail extends Component {
                     </div>
                     <div className='footer-right'>
                        <div className='add' onClick={this.addToCart}>加入购物车</div>
-                       <div className='pay' onClick={this.pay}>立即购买</div>
+                       <div className='pay' onClick={this.pay.bind(this,this.pid)}>立即购买</div>
                     </div>
                 </div>
             </div>

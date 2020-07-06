@@ -1,8 +1,8 @@
 .yg-address {
     .yg-address-header {
-        height:50px;
+        height:100px;
         width:100vw;
-        background-color: var(--themeColor);
+        background-color: red;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -11,9 +11,25 @@
 
         span.address-header-title {
             color:white;
-            font-size:20px;
+            font-size:18px;/*px*/
         }
 
         span {}
+    }
+    .yg-address-content{
+        width: 90vw;
+        margin: 0 auto;
+        font-size: 12px;/*px*/
+        // .address-content-phone{
+           input{
+            height: 60px;
+            border: none;
+            margin-left: 30px;
+           }
+        // }
+    }
+    .yg-address-save{
+        width: 20vw;
+        margin: 60px auto;
     }
 }

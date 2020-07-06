@@ -26,6 +26,23 @@ class TabBar extends Component {
             currentTab:params
         })
     }
+    componentDidMount() {
+        // 页面重新加载的时候 获取当前页面的 activeTab
+        let currentTab = window.location.hash.split("/")[1];
+        if (currentTab === "" || currentTab === "community" || currentTab === "cart" || currentTab === "my"){
+            if(currentTab === ""){
+                currentTab = "home"
+            }
+            this.setState({
+                currentTab
+            })
+        }else{
+            this.setState({
+                currentTab:"home"
+            })
+        }
+        // dsadasdasdsadasda
+    }
     render() {
         return (
             <div className='ygshop-tabbar'>

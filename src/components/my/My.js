@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './My.scss'
+import axios from '../../utils/axios'
 import { withRouter } from 'react-router-dom'
 class My extends Component {
     state = {
@@ -7,6 +8,18 @@ class My extends Component {
     }
     login = (params) => {
         this.props.history.push('/login')
+    }
+    outLogin = (params) => {
+        axios.post('logout',{}).then(res=>{
+            console.log(res.msg);
+            if(res.ret === 0){
+                this.setState({
+                    isLogin:false
+                })
+            }
+        }).catch(err=>{
+            console.log('err:' + err);
+        })
     }
     componentDidMount(){
         let userInfo = JSON.parse(localStorage.getItem("userinfo"))||{};
@@ -26,6 +39,9 @@ class My extends Component {
                         <img src="" alt=""/>
                         <div className='userImg'>
                             <img src="https://www.17sucai.com/preview/177065/2016-09-12/Sc-5/images/user-img0.jpg" alt=""/>
+                        </div>
+                        <div className='outLogin' onClick={this.outLogin}>
+                            退出登录
                         </div>
                     </div> :
                     <div className='my-login'>
