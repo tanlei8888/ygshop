@@ -19,6 +19,7 @@ class Cart extends Component {
             priceAll:0
         }
    }
+   pid = '';
     addProduct_number = (pid) => {
         axios.post('updateCarts',{
             action:'add',
@@ -49,11 +50,12 @@ class Cart extends Component {
     }
     pay (params) {
         // 跳转到一个单独的支付页面
-        this.props.history.push("/pay");
+        this.props.history.push("/pay/"+this.props.product[0].pid);
 
     }
     componentDidMount(){
         this.props.getCartProduct()
+        this.pid = this.props.match.params.id || "";
     }
     render() {
         this.price = 0

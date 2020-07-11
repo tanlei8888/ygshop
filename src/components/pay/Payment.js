@@ -13,6 +13,9 @@ class Payment extends Component {
     componentWillUnmount() {
         clearInterval(this.timeId);
     }
+    cancelPay = (params) => {
+        this.props.history.go(-1);
+    }
     async componentDidMount() {
         //  支付的流程
         try {
@@ -63,6 +66,9 @@ class Payment extends Component {
                     size={200} //二维码的宽高尺寸
                     fgColor="#000000"  //二维码的颜色
                 />
+                <div className='cancelPay'
+                onClick={this.cancelPay}
+                >取消支付</div>
             </div>
         )
     }
